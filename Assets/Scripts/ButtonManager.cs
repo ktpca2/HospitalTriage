@@ -9,12 +9,17 @@ public class ButtonManager : MonoBehaviour
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
 #else
-            Application.Quit();
+        Application.Quit();
 #endif
     }
 
     public void StartButton()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void ResultsButton()
+    {
+        SceneManager.LoadScene(2);
     }
 }
