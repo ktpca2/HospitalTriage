@@ -13,6 +13,11 @@ public class ButtonManager : MonoBehaviour
 #endif
     }
 
+    public void MenuButton()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void StartButton()
     {
         SceneManager.LoadScene(2);
@@ -22,4 +27,5 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+    
 }

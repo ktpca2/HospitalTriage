@@ -30,10 +30,14 @@ public class RandomProblem : MonoBehaviour
         {18, "Standard Appointment"},
     };
 
-    void Start()
+    public string GetRandomProblem()
     {
         int randomKey = Random.Range(1, Problems.Count + 1);
+        return Problems[randomKey];
+    }
 
-        Debug.Log(Problems[randomKey]);
+    void Start()
+    {
+        Debug.Log(GetRandomProblem());
     }
 }
