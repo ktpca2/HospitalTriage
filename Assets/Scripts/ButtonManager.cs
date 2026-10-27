@@ -23,9 +23,8 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public void ResultsButton()
-    {
-        SceneManager.LoadScene(3);
-    }
-    
+    //public void ResultsButton()
+    //{
+    //    SceneManager.LoadScene(3);
+    //}
 }

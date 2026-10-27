@@ -3,41 +3,47 @@ using UnityEngine;
 
 public class RandomProblem : MonoBehaviour
 {
+    public static int Severity;
+    public static TMPro.TextMeshProUGUI DisplayText;
+    
     Dictionary<int, string> Problems = new()
     {
-        {1, "Heart Attack"},
-        {2, "Severe Allergic Reaction"},
-        {3, "Frequent Seizures"},
+        {0, "Heart Attack"},
+        {1, "Severe Allergic Reaction"},
+        {2, "Frequent Seizures"},
 
-        {4, "Broken Bone"},
-        {5, "Profuse Bleeding"},
-        {6, "Impalement"},
+        {3, "Broken Bone"},
+        {4, "Profuse Bleeding"},
+        {5, "Impalement"},
 
-        {7, "Panic Attack"},
-        {8, "Worsening Diabetes"},
-        {9, "Dead"},
+        {6, "Panic Attack"},
+        {7, "Worsening Diabetes"},
+        {8, "Dead"},
 
-        {10, "Swollen Limb"},
-        {11, "Under-dose"},
-        {12, "Out of Prescription Medicine"},
+        {9, "Swollen Limb"},
+        {10, "Under-dose"},
+        {11, "Out of Prescription Medicine"},
 
-        {13, "Vomiting > 72H"},
-        {14, "Diarrhoea > 72H"},
-        {15, "Unexplained Sudden Rash"},
+        {12, "Vomiting > 72H"},
+        {13, "Diarrhoea > 72H"},
+        {14, "Unexplained Sudden Rash"},
 
-        {16, "Flu-like Symptoms"},
-        {17, "Back Pains"},
-        {18, "Standard Appointment"},
+        {15, "Flu-like Symptoms"},
+        {16, "Back Pains"},
+        {17, "Standard Appointment"},
     };
+
+    private void Start()
+    {
+        GetRandomProblem();
+    }
 
     public string GetRandomProblem()
     {
-        int randomKey = Random.Range(1, Problems.Count + 1);
+        int randomKey = Random.Range(0, Problems.Count);
+        Severity = Mathf.FloorToInt(randomKey / 3);
+        Debug.Log(Severity);
+        DisplayText.text = Problems[randomKey];
         return Problems[randomKey];
-    }
-
-    void Start()
-    {
-        Debug.Log(GetRandomProblem());
     }
 }

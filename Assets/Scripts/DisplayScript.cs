@@ -3,11 +3,8 @@ using UnityEngine;
 
 public class ProblemUI : MonoBehaviour
 {
-    public RandomProblem randomProblem;
-    public TMP_Text problemText;
-
-    void Start()
+    public void Awake()
     {
-        problemText.text = randomProblem.GetRandomProblem();
+        RandomProblem.DisplayText = this.transform.GetComponent<TMPro.TextMeshProUGUI>();
     }
 }
