@@ -3,11 +3,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int patientsCured;
-    private int patientsHad;
+    public int patientsHad;
 
     public static GameManager gameManager;
-
-    private RandomProblem ProblemScript;
 
     private void Awake()
     {
@@ -16,8 +14,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-
-        ProblemScript = gameObject.GetComponent<RandomProblem>();
+        DontDestroyOnLoad(gameObject);
     }
 
     public void NextPatient()
@@ -29,9 +26,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            ProblemScript.GetRandomProblem();
+            RandomProblem.RandomProblemScript.GetRandomProblem();
         }
     }
 
-
+    public void Restart()
+    {
+        patientsCured = 0;
+        patientsHad = 0;
+    }
 }

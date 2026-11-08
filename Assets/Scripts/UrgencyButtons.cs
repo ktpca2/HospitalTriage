@@ -8,7 +8,7 @@ public class UrgencyButtons : MonoBehaviour
 
     public void Start()
     {
-        transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = "U" + urgency;
+        transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = "U" + (urgency + 1);
     }
 
     public void OnClick()

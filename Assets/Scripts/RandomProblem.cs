@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class RandomProblem : MonoBehaviour
 {
+    public static RandomProblem RandomProblemScript;
+
+    private int lastProblemIndex = -1;
+
     public static int Severity;
     public static TMPro.TextMeshProUGUI DisplayText;
     
@@ -35,15 +39,43 @@ public class RandomProblem : MonoBehaviour
 
     private void Start()
     {
+        RandomProblemScript = this;
+        if (RandomProblemScript != this)
+        {
+            Destroy(gameObject);
+        }
+
         GetRandomProblem();
     }
 
     public string GetRandomProblem()
     {
-        int randomKey = Random.Range(0, Problems.Count);
+        if (Problems == null || Problems.Count == 0)
+        {
+            return string.Empty;
+        }
+
+        if (Problems.Count == 1)
+        {
+            lastProblemIndex = 0;
+            Severity = 0;
+            DisplayText.text = Problems[0];
+            return Problems[0];
+        }
+
+        int randomKey;
+        do
+        {
+            randomKey = Random.Range(0, Problems.Count);
+        }
+        while (randomKey == lastProblemIndex); 
+
+        lastProblemIndex = randomKey;
+
         Severity = Mathf.FloorToInt(randomKey / 3);
         Debug.Log(Severity);
         DisplayText.text = Problems[randomKey];
+
         return Problems[randomKey];
     }
 }

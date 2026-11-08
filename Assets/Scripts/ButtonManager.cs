@@ -15,6 +15,7 @@ public class ButtonManager : MonoBehaviour
 
     public void MenuButton()
     {
+        GameManager.gameManager.Restart();
         SceneManager.LoadScene(1);
     }
 
