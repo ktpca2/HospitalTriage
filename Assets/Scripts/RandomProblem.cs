@@ -12,29 +12,29 @@ public class RandomProblem : MonoBehaviour
     
     Dictionary<int, string> Problems = new()
     {
-        {0, "Heart Attack"},
-        {1, "Severe Allergic Reaction"},
-        {2, "Frequent Seizures"},
+        {0, "I'm having a heart attack!"},
+        {1, "I'm having an allergic reaction and can't breathe!"},
+        {2, "Patient is unresponsive due to an internal brain bleed."},
 
-        {3, "Broken Bone"},
-        {4, "Profuse Bleeding"},
-        {5, "Impalement"},
+        {3, "My face started to droop and I'm slurring my words."},
+        {4, "I am having major pains in my chest!"},
+        {5, "Patient is barely breathing due to asthma"},
 
-        {6, "Panic Attack"},
-        {7, "Worsening Diabetes"},
-        {8, "Dead"},
+        {6, "I have an 38.5C fever and I'm feeling unwell."},
+        {7, "My stomach is hurting quite a bit."},
+        {8, "I think I fractured my arm, it's all swollen!"},
 
-        {9, "Swollen Limb"},
-        {10, "Under-dose"},
-        {11, "Out of Prescription Medicine"},
+        {9, "I fell and have minor cuts all over me."},
+        {10, "I sprained my ankle!"},
+        {11, "My ears are constantly hurting!"},
 
-        {12, "Vomiting > 72H"},
-        {13, "Diarrhoea > 72H"},
-        {14, "Unexplained Sudden Rash"},
+        {12, "I have a runny nose and keep sneezing."},
+        {13, "I'm having some stomach aches."},
+        {14, "I found a rash on my back."},
 
-        {15, "Flu-like Symptoms"},
-        {16, "Back Pains"},
-        {17, "Standard Appointment"},
+        {15, "I have a headache."},
+        {16, "I'm coughing a lot."},
+        {17, "I'm here for my standard appointment."},
     };
 
     private void Start()
